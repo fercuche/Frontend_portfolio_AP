@@ -1,0 +1,27 @@
+.container{
+    background-color: aliceblue;
+}
+h4{
+    font-family: sans-serif;
+    text-align: justify;
+}
+
+#name-title{
+    align-self: center;
+}
+#fullname {
+    font-weight: bold;
+    margin-top: 3rem;
+}
+#title {
+    margin-bottom: 2rem;
+}
+
+#profile{
+    align-self: center;
+}
+
+#profileImg{
+    border-radius: 200px;
+    padding: 5px;
+}
