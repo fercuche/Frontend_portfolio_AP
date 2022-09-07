@@ -1,3 +1,31 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.social{
+    margin-right: 0.5rem;
+
+}
 #logo-ap{
     width: 150px;
+    justify-content: flex-start;
+}
+img {
+    width: 50px;
+    margin: 2px;
+}
+.btn{
+    border-width: medium;
+    font-weight: bold;
+} 
+
+/*---Mobile size---*/
+@media(max-width: 420px){
+.container{
+    flex-direction: column;
+}
+.social{
+    margin-bottom: 0.5rem;
+}
 }

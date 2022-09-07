@@ -1,6 +1,9 @@
 .container{
     background-color: aliceblue;
 }
+n2{
+    padding: 00.5rem;
+}
 h4{
     font-family: sans-serif;
     text-align: justify;
@@ -23,5 +26,5 @@ h4{
 
 #profileImg{
     border-radius: 200px;
-    padding: 5px;
+    padding: 0.5rem;
 }
