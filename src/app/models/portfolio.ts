@@ -1,8 +1,10 @@
 export interface Portfolio{
-    id:number;
-    nombre:string;
-    apellido:string;
-    titulo:string;
-    descripcion:string;
-    fotoPerfil:string;
+  id: number;
+  name: string;
+  lastname: string;
+  dob: Date;
+  occupation: string;
+  aboutMe: string;
+  profileImg: string;
+  headerImg: string;
 }

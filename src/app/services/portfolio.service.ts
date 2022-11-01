@@ -7,13 +7,17 @@ import { Portfolio } from '../models/portfolio';
 @Injectable({
   providedIn: 'root'
 })
-export class HeaderService {
+export class PortfolioService {
   private apiServiceUrl=environment.apiBaseUrl;
 
   constructor(private http: HttpClient) { }
 
-  public getUser():Observable<Portfolio>{
-    return this.http.get<Portfolio>(`${this.apiServiceUrl}/portfolio/id/1`)
+  public getPortfolio(): Observable<Portfolio>{
+    return this.http.get<Portfolio>(`${this.apiServiceUrl}/portfolio/1`);
+  }
+
+  public updatePortfolio(portfolio:Portfolio):Observable<Portfolio>{
+    return this.http.put<Portfolio>(`${this.apiServiceUrl}/portfolio`, portfolio);
   }
 
 }
