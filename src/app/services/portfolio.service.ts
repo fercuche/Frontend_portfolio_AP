@@ -16,8 +16,8 @@ export class PortfolioService {
     return this.http.get<Portfolio>(`${this.apiServiceUrl}/portfolio/1`);
   }
 
-  public updatePortfolio(portfolio:Portfolio):Observable<Portfolio>{
-    return this.http.put<Portfolio>(`${this.apiServiceUrl}/portfolio`, portfolio);
+  public updatePortfolio(id:number, portfolio:Portfolio):Observable<Portfolio>{
+    return this.http.put<Portfolio>(`${this.apiServiceUrl}/portfolio/${id}`, portfolio);
   }
 
 }

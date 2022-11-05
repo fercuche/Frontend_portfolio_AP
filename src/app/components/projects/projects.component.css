@@ -1,3 +1,21 @@
 .container{
+    background: rgb(238, 174, 202);
+    background: linear-gradient(106deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+h4{
+    font-family: monospace;
+}
+
+p,h5{
+    font-family: monospace;
+    margin-top: 1rem;
+}
+
+#prjImg{
     background-color: aliceblue;
+}
+
+.card{
+    border-radius: 1em;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }

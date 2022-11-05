@@ -16,8 +16,7 @@
   <div class="row skill">
     <div
       *ngFor="let skill of skills"
-      class="text-center col-xs-8 col-sm-8 col-md-6 col-lg-3"
-    >
+      class="text-center col-xs-8 col-sm-8 col-md-6 col-lg-3">
       <div class="skillcircle">
         <a
           (click)="onOpenModal('edit', skill)"
@@ -40,20 +39,20 @@
           {{ skill.name }}
           <circle-progress
             [percent]="skill.percentage"
-            [radius]="100"
+            [radius]="60"
             [showUnits]="false"
             [showImage]="true"
+            [backgroundColor]="'transparent'"
             [imageHeight]="70"
             [imageWidth]="70"
             [showSubtitle]="true"
             [titleFontSize]="'25px'"
             [outerStrokeWidth]="12"
             [innerStrokeWidth]="2"
-            [title]="skill.name"
-            [outerStrokeColor]="'#A6AAAD'"
-            [innerStrokeColor]="'#505255'"
-            [animation]="true"
-            [animationDuration]="1000"
+            [title]="'{{skill.name}}'"
+            [outerStrokeColor]="'#78C000'"
+            [innerStrokeColor]="'#C7E596'"
+            [animationDuration]="1500"
           ></circle-progress>
         </div>
       </div>

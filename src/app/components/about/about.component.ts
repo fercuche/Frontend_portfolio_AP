@@ -46,7 +46,7 @@ export class AboutComponent implements OnInit {
 
   public onUpdatePortfolio(portfolio:Portfolio):void{
     this.editPortfolio = portfolio;
-    this.portfolioService.updatePortfolio(portfolio).subscribe({
+    this.portfolioService.updatePortfolio(1, portfolio).subscribe({
       next: (response: Portfolio) => {
         console.log(response);
         this.getPortfolio();

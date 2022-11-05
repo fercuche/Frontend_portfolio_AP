@@ -1,8 +1,27 @@
-.container{
-    background-color: aliceblue;
+.container-edu{
+    background: rgb(238, 174, 202);
+    background: linear-gradient(106deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+h4{
+    font-family: monospace;
+}
+
+p,h5{
+    font-family: monospace;
+    margin-top: 1rem;
 }
 
 #eduImg{
-    background-color: rgb(234, 234, 244);
-    align-self: center;
+    background-color: transparent;
+}
+.card-img-top {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+.card{
+    background-color: aliceblue;
+    border-radius: 1em;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    width: 80%;
 }
