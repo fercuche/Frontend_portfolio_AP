@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-projects mx-0">
   <div>
     <h4 class="mb-0 pt-1 text-center">PROYECTOS</h4>
   </div>
@@ -10,8 +10,8 @@
     </button>
   </div>
 
-  <div class="row row-cols-1 row-cols-md-5">
-    <div class="col h-100 mx-auto py-3" *ngFor="let project of projects">
+  <div class="row row-cols-1 row-cols-md-3 justify-content-center mx-0 px-3 py-2">
+    <div class="col d-flex justify-content-center" *ngFor="let project of projects">
       <div class="card text-center">
         <img src="{{project.image}}" class="img-fluid" id="prjImg" alt="logo proyecto">
         <div class="card-body">
@@ -148,7 +148,7 @@
           <h5 class="modal-title" id="deleteModelLabel">Borrar Proyecto</h5>
         </div>
         <div class="modal-body">
-          <p style="color: rgb(255, 255, 255)">
+          <p style="color: rgb(0, 0, 0)">
             Estás seguro que quieres borrar
             {{ deleteProject?.name }}?
           </p>
