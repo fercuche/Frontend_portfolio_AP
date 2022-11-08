@@ -5,7 +5,8 @@
     </div>
 
     <div class="text-center" id="editbtn">
-      <a (click)="onOpenModal('edit', portfolio)" class="btn btn-primary tooltips" data-placement="top"
+      <a *ngIf="islogged()"
+       (click)="onOpenModal('edit', portfolio)" class="btn btn-primary tooltips" data-placement="top"
         data-bs-toggle="modal" data-bs-target="#editPortfolioModal" data-original-title="Edit"><em
           class="bi bi-pencil-square"></em>
       </a>

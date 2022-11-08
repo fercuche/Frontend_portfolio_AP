@@ -1,23 +1,33 @@
-<div>
-    <p class="text-center">LOGIN</p>
-    <p>Ingrese para editar el portfolio</p>
-<form>
-    <div class="row mb-3">
-      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-      <div class="col-sm-10">
-        <input type="email" class="form-control" id="inputEmail3">
+<h1 class="m-5">Iniciar Sesión</h1>
+<form [formGroup]="form" class="m-5" (ngSubmit)="onEnviar($event)">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Username</label>
+      <input type="email"  formControlName="username" 
+      [ngClass]="{'is-invalid': Username?.errors && Username?.touched, 'is-valid': !Username?.errors && Username?.touched}"
+       class="form-control" id="exampleInputEmail1" >   
+      <div *ngIf="Username?.errors  && Username?.touched">             
+        <p *ngIf="Username?.hasError('required')" class="text-danger">
+            El email es requerido.
+        </p>
+        <p *ngIf="Username?.hasError('email')" class="text-danger">
+           El formato del email debe ser válido.
+         </p>
+        </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+      <input type="password" formControlName="password" 
+      [ngClass]="{'is-invalid': Password?.errors && Password?.touched,
+      'is-valid': !Password?.errors && Password?.touched}"
+      class="form-control" id="exampleInputPassword1">
+      <div *ngIf="Password?.errors && Password?.touched">
+        <p *ngIf="Password?.hasError('required')" class="text-danger">
+           La contraseña es requerida.
+        </p>
+        <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
+           La contraseña debe ser de 8 o más caracteres.
+        </p>    
       </div>
     </div>
-    <div class="row mb-3">
-      <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-      <div class="col-sm-10">
-        <input type="password" class="form-control" id="inputPassword">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col-sm-10 offset-sm-2">
-      </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Ingresar</button>
-  </form>
-</div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>

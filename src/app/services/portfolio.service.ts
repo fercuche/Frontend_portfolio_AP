@@ -12,8 +12,8 @@ export class PortfolioService {
 
   constructor(private http: HttpClient) { }
 
-  public getPortfolio(): Observable<Portfolio>{
-    return this.http.get<Portfolio>(`${this.apiServiceUrl}/portfolio/1`);
+  public getPortfolio(): Observable<any>{
+    return this.http.get<any>(`${this.apiServiceUrl}/portfolio/1`);
   }
 
   public updatePortfolio(id:number, portfolio:Portfolio):Observable<Portfolio>{

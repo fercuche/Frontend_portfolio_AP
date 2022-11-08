@@ -1,7 +1,7 @@
 <div class="container-edu" id="experience">
   <h4 class="text-center mb-0 pt-1">EDUCACIÓN</h4>
 
-  <div class="text-center">
+  <div *ngIf="islogged()" class="text-center">
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addEducationModal"
       (click)="onOpenModal('add')">
       <a class="nav-link" style="color: #fff">Agregar Educación</a>
@@ -17,7 +17,7 @@
           <p class="fs-6">{{education.institution}}</p>
           <p class="card-text fst-italic">Desde el {{education.startDate}} hasta el {{education.endDate}}</p>
 
-          <div class="text-center">
+          <div *ngIf="islogged()" class="text-center">
             <a (click)="onOpenModal('edit', education)" class="btn btn-primary tooltips" data-placement="top"
               data-bs-toggle="modal" data-bs-target="#editEducationModal" data-original-title="Edit"><em
                 class="bi bi-pencil-square"></em>

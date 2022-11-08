@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Education } from 'src/app/models/education';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { EducationService } from 'src/app/services/education.service';
 
 
@@ -16,7 +17,10 @@ export class EducationComponent implements OnInit {
   public editEducation: Education | undefined;
   public deleteEducation: Education | undefined;
 
-  constructor(private educationService: EducationService) { }
+  constructor(
+    private educationService: EducationService,
+    private authService : AuthenticationService) { }
+    islogged = () => this.authService.loggedIn();
 
   ngOnInit(): void {
     this.getEducation();

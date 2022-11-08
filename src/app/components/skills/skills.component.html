@@ -1,7 +1,7 @@
 <div class="container-skill">
   <h4 class="text-center mb-0 pt-1">SKILLS
   </h4>
-  <div class="text-center">
+  <div *ngIf="islogged()" class="text-center">
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addSkillModal" 
     (click)="onOpenModal('add')">
       <a class="nav-link" style="color: #fff">Agregar Skill</a>
@@ -10,7 +10,7 @@
   <div class="card">
     <div class="row mx-0">
       <div *ngFor="let skill of skills" class="text-center col-xs-8 col-sm-8 col-md-6 col-lg-3">
-        <div class="skillcircle">
+        <div *ngIf="islogged()" class="skillcircle">
           <a (click)="onOpenModal('edit', skill)" class="btn btn-primary tooltips" data-placement="top"
             data-bs-toggle="modal" data-bs-target="#editSkillModal" data-original-title="Edit"><em class="bi bi-pencil-square"></em>
           </a>

@@ -2,7 +2,7 @@
   <div>
     <h4 class="mb-0 pt-1 text-center">PROYECTOS</h4>
   </div>
-  <div class="text-center">
+  <div *ngIf="islogged()" class="text-center">
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addProjectModal"
       (click)="onOpenModal('add')">
       <a class="nav-link" style="color: #fff">
@@ -21,7 +21,7 @@
           <p class="fs-6"><a href="{{project.url}}" target="_blank" rel="noopener noreferrer">Enlace del proyecto</a>
           </p>
 
-          <div class="text-center">
+          <div *ngIf="islogged()" class="text-center">
             <a (click)="onOpenModal('edit', project)" class="btn btn-primary tooltips" data-placement="top"
               data-bs-toggle="modal" data-bs-target="#editProjectModal" data-original-title="Edit"><em
                 class="bi bi-pencil-square"></em>
