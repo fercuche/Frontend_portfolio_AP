@@ -1,7 +1,11 @@
-.container{
+.container-aplogo{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 4rem;
+    background: rgb(51,231,157);
+    background: linear-gradient(90deg, rgba(51,231,157,1) 0%, rgba(33,247,119,1) 100%);
+
 }
 .social{
     margin-right: 0.5rem;
@@ -18,14 +22,34 @@ img {
 .btn{
     border-width: medium;
     font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
 } 
+
+
+app-social{
+    float: right;
+    margin-top: 25px;
+}
 
 /*---Mobile size---*/
 @media(max-width: 420px){
-.container{
+    
+.container-aplogo{
     flex-direction: column;
+    height: auto;
+}
+#logo-ap{
+    width: 7rem;
 }
 .social{
+    display: flex;
     margin-bottom: 0.5rem;
+    margin-right: 0%;
+    justify-content: center;
+}
+img {
+    width: 40px;
+    margin: 2px;
 }
 }

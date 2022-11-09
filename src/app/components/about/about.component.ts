@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Portfolio } from 'src/app/models/portfolio';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
@@ -13,8 +14,10 @@ export class AboutComponent implements OnInit {
   public editPortfolio: Portfolio | undefined;
 
   constructor(
-    private portfolioService : PortfolioService) 
+    private portfolioService : PortfolioService,
+    private authService : AuthenticationService) 
     { }
+    islogged = () => this.authService.loggedIn();
 
   ngOnInit() {
     this.getPortfolio();
@@ -46,7 +49,7 @@ export class AboutComponent implements OnInit {
 
   public onUpdatePortfolio(portfolio:Portfolio):void{
     this.editPortfolio = portfolio;
-    this.portfolioService.updatePortfolio(portfolio).subscribe({
+    this.portfolioService.updatePortfolio(1, portfolio).subscribe({
       next: (response: Portfolio) => {
         console.log(response);
         this.getPortfolio();

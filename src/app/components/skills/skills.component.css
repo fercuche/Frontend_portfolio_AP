@@ -1,3 +1,18 @@
-.container{
-    background-color: aliceblue;
+.container-skill{
+    background: rgb(238, 174, 202);
+    background: linear-gradient(106deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
 }
+
+h4{
+    font-family: monospace;
+}
+
+p,h5{
+    font-family: monospace;
+    margin-top: 1rem;
+}
+
+.card{
+    background: transparent;
+    border-color: transparent;
+}  

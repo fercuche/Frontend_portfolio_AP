@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Skill } from 'src/app/models/skill';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { SkillService } from 'src/app/services/skill.service';
 
 @Component({
@@ -16,7 +17,9 @@ export class SkillsComponent implements OnInit {
 
   constructor(
     private skillService: SkillService,
+    private authService : AuthenticationService
   ) {}
+  islogged = () => this.authService.loggedIn();
 
   ngOnInit(): void {
     this.getSkill();

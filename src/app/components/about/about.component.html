@@ -1,135 +1,74 @@
-<div class="container" id="main-container">
-    <div class="row">
-        <div>
-            <img src="../../../assets/banner.jpg" class="img-fluid">
-        </div>
-        <div class="text-center">
-            <a
-              (click)="onOpenModal('edit', portfolio)"
-              class="btn btn-primary tooltips"
-              data-placement="top"
-              data-bs-toggle="modal"
-                data-bs-target="#editPortfolioModal"
-              data-original-title="Edit"
-              ><em class="bi bi-pencil-square"></em>
-            </a>
-          </div>
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 text-center" id="profile" >
-            <img src="../../../assets/foto cv.png" class="img-fluid" id="profileImg">
-        </div>
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 text-center" id="name-title">
-            <p id="fullname"> {{portfolio?.name}} {{portfolio?.lastname}}</p>
-            <p id="title">{{portfolio?.occupation}}</p>
-            <p id="dob">{{portfolio?.dob}}</p>
-        </div>
-        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8" id="about">
-            <h2 class="text-center">Acerca de mí</h2>
-            <h4> {{portfolio?.aboutMe}}
-    Estudiante avanzado de Ingeniería y entusiasta de la tecnología y la programación en 
-    busca de mi primer empleo en el mundo IT, donde pueda aplicar los conocimientos 
-    adquiridos así como también tener la oportunidad de crecer en el ámbito 
-    profesional, personal e intelectual
-            </h4>
-        </div>
-    </div>
-</div>
 
-<!--  Edit info modal  -->
-<div
-  class="modal fade modales"
-  id="editPortfolioModal"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="editPortfolioModalLabel"
-  aria-hidden="true"
->
+  <div class="row gx-0" id="about-container">
+    <div>
+      <img src="../../../assets/banner.jpg" class="img-fluid"  id="banner" alt="">
+    </div>
+
+    <div class="text-center" id="editbtn">
+      <a *ngIf="islogged()"
+       (click)="onOpenModal('edit', portfolio)" class="btn btn-primary tooltips" data-placement="top"
+        data-bs-toggle="modal" data-bs-target="#editPortfolioModal" data-original-title="Edit"><em
+          class="bi bi-pencil-square"></em>
+      </a>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 px-3" id="profile">
+      <img src="../../../assets/foto cv.png" alt="" id="profileImg">
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 text-center" id="name-title">
+      <h4 id="fullname"> {{portfolio?.name}} {{portfolio?.lastname}}</h4>
+      <h5 class="text-center" id="title">{{portfolio?.occupation}}</h5>
+      <h5 class="text-center" id="dob">{{portfolio?.dob}}</h5>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="about">
+      <h3 class="text-center">Acerca de mí</h3>
+      <h6 class="px-4"> {{portfolio?.aboutMe}}</h6>
+    </div>
+  </div>
+
+<!--  Edit portfolio modal  -->
+<div class="modal fade" id="editPortfolioModal" tabindex="-1" role="dialog"
+  aria-labelledby="editPortfolioModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title text-center" id="editPortfolioModalLabel">
-          {{ portfolio?.name }}
+      <div class="modal-header justify-content-center">
+        <h5 class="modal-title" id="editPortfolioModalLabel">
+          Editar Perfil
         </h5>
       </div>
       <div class="modal-body">
         <form #editForm="ngForm">
           <div class="form-group">
             <label for="name">Nombre</label>
-            <input
-              type="text"
-              ngModel="{{ portfolio?.name }}"
-              name="name"
-              class="form-control"
-              id="name"
-              aria-describedby="name"
-              placeholder="Nombre"
-            />
+            <input type="text" ngModel="{{ portfolio?.name }}" name="name" class="form-control" id="name"
+              aria-describedby="name" placeholder="Nombre" />
           </div>
-          <input
-            type="hidden"
-            ngModel="{{ portfolio?.id }}"
-            name="id"
-            class="form-control"
-            id="id"
-            placeholder=""
-          />
+          <input type="hidden" ngModel="{{ portfolio?.id }}" name="id" class="form-control" id="id" placeholder="" />
 
           <div class="form-group">
             <label for="lastname">Apellido</label>
-            <input
-              type="text"
-              ngModel="{{ portfolio?.lastname }}"
-              name="lastname"
-              class="form-control"
-              id="lastname"
-              placeholder="Apellido"
-            />
+            <input type="text" ngModel="{{ portfolio?.lastname }}" name="lastname" class="form-control" id="lastname"
+              placeholder="Apellido" />
           </div>
           <div class="form-group">
             <label for="occupation">Ocupación</label>
-            <input
-              type="text"
-              ngModel="{{ portfolio?.occupation }}"
-              name="occupation"
-              class="form-control"
-              id="occupation"
-              placeholder="Ocupación"
-            />
+            <input type="text" ngModel="{{ portfolio?.occupation }}" name="occupation" class="form-control"
+              id="occupation" placeholder="Ocupación" />
           </div>
           <div class="form-group">
             <label for="aboutMe">Descripción</label>
-            <input
-              type="text"
-              ngModel="{{ portfolio?.aboutMe }}"
-              name="aboutMe"
-              class="form-control"
-              id="aboutMe"
-              placeholder="Descripción"
-            />
+            <input type="text" ngModel="{{ portfolio?.aboutMe }}" name="aboutMe" class="form-control" id="aboutMe"
+              placeholder="Descripción" />
           </div>
           <div class="form-group">
             <label for="profileImg">URL de la imagen</label>
-            <input
-              type="text"
-              ngModel="{{ portfolio?.profileImg}}"
-              name="profileImg"
-              class="form-control"
-              id="profileImg"
-              placeholder="URL de la imagen"
-            />
+            <input type="text" ngModel="{{ portfolio?.profileImg}}" name="profileImg" class="form-control"
+              id="profileImgUrl" placeholder="URL de la imagen" />
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              data-bs-dismiss="modal"
-              class="btn btn-secondary"
-            >
+            <button data-bs-dismiss="modal" class="btn btn-secondary">
               Cerrar
             </button>
-            <button
-              (click)="onUpdatePortfolio(editForm.value)"
-              data-bs-dismiss="modal"
-              class="btn btn-primary"
-            >
+            <button (click)="onUpdatePortfolio(editForm.value)" data-bs-dismiss="modal" class="btn btn-primary">
               Guardar Cambios
             </button>
           </div>
